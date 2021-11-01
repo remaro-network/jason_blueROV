@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>jason_blueROV</name>
+  <version>0.0.0</version>
+  <description>The jason_blueROV package</description>
+
+  <maintainer email="g.rezendesilva@tudelft.nl">Gustavo Rezende</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>jason_metacontrol</build_depend>
+  <build_depend>jason_ros</build_depend>
+  <build_depend>jason_ros_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_export_depend>jason_metacontrol</build_export_depend>
+  <build_export_depend>jason_ros</build_export_depend>
+  <build_export_depend>jason_ros_msgs</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>jason_metacontrol</exec_depend>
+  <exec_depend>jason_ros</exec_depend>
+  <exec_depend>jason_ros_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>mavros</exec_depend>
+
+
+  <export>
+  </export>
+</package>
