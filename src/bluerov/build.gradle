@@ -1,0 +1,61 @@
+/*
+   Project bluerov
+
+   Gradle build file for Jason Application
+   November 01, 2021 - 19:10:00
+*/
+
+defaultTasks 'run'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version '1.0'
+group   'org.jason'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+
+    maven { url "https://raw.github.com/jacamo-lang/mvn-repo/master" }
+    maven { url "https://jade.tilab.com/maven/" }
+    maven { url "https://raw.github.com/rosjava/rosjava_mvn_repo/master" }
+    maven { url "https://raw.github.com/jason-lang/mvn-repo/master" }
+    //maven { url "http://jacamo.sourceforge.net/maven2" }
+    flatDir { dirs 'lib' }
+}
+
+dependencies {
+    compile group: 'org.jason',     name: 'jason' ,   version: '2.6.3'
+    compile group: 'org.jason-lang',     name: 'jasonros' ,   version: '1.8'
+    compile group: 'org.jason-lang',     name: 'jasonros_msgs' ,   version: '1.8'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
+}
+
+task run (type: JavaExec, dependsOn: 'classes') {
+    description 'runs the application'
+    main = 'jason.infra.centralised.RunCentralisedMAS'
+    args 'bluerov.mas2j'
+	// options:
+	//     args = ['bluerov.mas2j', '--debug']
+	//     args = ['bluerov.mas2j', '--log-conf', 'l.p'] // to use file l.p to configure logging
+    classpath sourceSets.main.runtimeClasspath
+}
+
+clean {
+    delete 'bin'
+    delete 'build'
+}

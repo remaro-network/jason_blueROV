@@ -1,0 +1,7 @@
+MAS bluerov {
+
+    infrastructure: Centralised
+
+    agents: mission agentArchClass jasonros.RosArch;
+            metacontrol agentArchClass jasonros.RosArch;
+}
