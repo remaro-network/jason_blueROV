@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>jason_blueROV</name>
+  <name>jason_bluerov</name>
   <version>0.0.0</version>
-  <description>The jason_blueROV package</description>
+  <description>The jason_bluerov package</description>
 
   <maintainer email="g.rezendesilva@tudelft.nl">Gustavo Rezende</maintainer>
 

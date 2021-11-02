@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(jason_blueROV)
+project(jason_bluerov)
 
 find_package(catkin REQUIRED COMPONENTS
   jason_metacontrol
