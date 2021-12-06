@@ -1,15 +1,22 @@
 <launch>
+  <!-- SITL -->
   <arg name="fcu_url" default="udp://:14551@:14555"/>
+
+  <!-- BlueROV2 -->
+  <!-- <arg name="fcu_url" default="udp://192.168.2.1:14550@192.168.2.2:14555"/> -->
 
   <include file="$(find mavros)/launch/apm.launch">
     <arg name="fcu_url" value="$(arg fcu_url)"/>
   </include>
+
+  <!-- not sure if this is really necessary but I am keeping it for now -->
+  <node pkg="rosservice" type="rosservice" name="mavros_set_stream" args="call --wait /mavros/set_stream_rate 0 10 1"/>
 
   <node name="hw_bridge" pkg="jason_ros" type="hw_bridge.py"
     args="-a $(find jason_bluerov)/config/mission_actions_manifest
     -p $(find jason_bluerov)/config/mission_perceptions_manifest"/>
 
   <node name="jason_agent" pkg="jason_ros" type="gradle_starter.sh"
-    args="$(find jason_bluerov)/src/bluerov/build.gradle"/>
+    args="$(find jason_bluerov)/src/bluerov/build.gradle" output="screen"/>
 
 </launch>
