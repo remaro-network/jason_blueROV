@@ -1,0 +1,28 @@
+[set_fcu_param]
+method = service
+name = mavros/param/set
+msg_type = mavros_msgs/ParamSet
+params_name = param_id, value.integer, value.real
+params_type = str, int, float
+
+[set_mode]
+method = service
+name = mavros/set_mode
+msg_type = SetMode
+dependencies = mavros_msgs.srv
+params_name = custom_mode
+
+[arm_motors]
+method = service
+name = mavros/cmd/arming
+msg_type = CommandBool
+dependencies = mavros_msgs.srv
+params_name = value
+params_type = bool
+
+[rc_override]
+method = topic
+name = /mavros/rc/override
+msg_type = mavros_msgs/OverrideRCIn
+params_name = channels
+params_type = int[]
