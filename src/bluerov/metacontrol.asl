@@ -9,3 +9,5 @@
 /* Plans */
 
 +!start : true <- .print("Performing self-adaptation!!!!!!").
+
+{include("tomasys.asl")}
