@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     implementation group: 'org.jason',     name: 'jason' ,   version: '3.0-SNAPSHOT'
-    implementation group: 'org.jason-lang',     name: 'jasonros' ,   version: '1.9'
+    implementation group: 'org.jason-lang',     name: 'jasonros' ,   version: '1.9.2'
     implementation group: 'org.jason-lang',     name: 'jasonros_msgs' ,   version: '1.9'
 }
 
